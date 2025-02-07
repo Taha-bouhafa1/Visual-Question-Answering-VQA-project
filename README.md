@@ -4,7 +4,7 @@ This project implements a Visual Question Answering (VQA) system using the VQA v
 
 ## General Purpose
 The goal is to create a model that can answer questions about images by combining visual and textual information. The project uses a combination of computer vision and natural language processing to achieve this.
-
+![Alt text](https://github.com/Taha-bouhafa1/Visual-Question-Answering-VQA-project/blob/main/vqa-image.png)
 ## Tools and Technologies Used
 - **VQA v2.0 Dataset**: The dataset includes images, questions, and answers. Only the training subset was used due to hardware limitations.
 - **ResNet50**: A convolutional neural network used to extract image features.
