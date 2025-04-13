@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A-S-L Detection</title>
+    <link rel="icon" type="image/png" href="\static\images\logo.png">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <style> 
+      .footer {
+        background-color: #ff4800;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        margin-top: 5px;
+      }
+      .link_btn a.btn-primary {
+        background-color: blue; /* Set primary button color to blue */
+        color: white; /* Set text color of primary button to white */
+      }
+      .footer .link_btn a.btn-secondary {
+        background-color: #ff4800; /* Set secondary button color same as footer */
+        color: white; /* Set text color of secondary button to white */
+      }
+    </style>
+  </head>
+  <body class="main-layout">
+    <div class="loader_bg">
+      <div class="loader"><img src="{{ url_for('static', filename='images/loading.gif') }}" alt="#" /></div>
+    </div>
+    <div class="header">
+      <div class="container-fluid">
+        <div class="row d_flex">
+          <div class="col-md-2 col-sm-3 col logo_section">
+            <div class="full">
+              <div class="center-desk">
+                <div class="logo">
+                  <a href="/"
+                    ><img class="az" src="{{ url_for('static', filename='images/logo.png') }}" alt="#"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <nav class="navigation navbar navbar-expand-md navbar-dark">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarsExample04"
+                aria-controls="navbarsExample04"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarsExample04">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/detect">Detect</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/stream">stream/webcam</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="full_bg">
+      <div class="slider_main">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="carousel-caption relative">
+                      <div class="row d_flex align-items-start">
+                        <div class="col-md-5">
+                          <div class="board">
+                            <i><img src="{{ url_for('static', filename='images/top_icon.png') }}" alt="#" /></i>
+                            <img src="{{ url_for('static', filename='images/streaming page.png') }}" alt="" style="margin-top: 5px; margin-left: 18px;">
+                            <i><img class="ft" src="{{ url_for('static', filename='images/top_icon.png') }}" alt="#" /></i>
+                          </div>
+                        </div>
+                        <div class="col-md-7">
+                          <div class="banner_img position-relative" style="margin-top: 1cm; border: 2px solid #000; padding: 10px;height: 70%;">
+                            <h1>Detection Result:</h1>
+                            <figure style="height: 450px; display: flex; justify-content: center; align-items: center;">
+                              {% if latest_file_path %}
+                                {% if latest_file_path.endswith('.jpg') or latest_file_path.endswith('.png') %}
+                                  <img src="{{ latest_file_path }}" alt="Detected Image" style="max-width: 100%; max-height: 100%;">
+                                {% elif latest_file_path.endswith('.mp4') or latest_file_path.endswith('.avi') or latest_file_path.endswith('.mkv') %}
+                                  <video controls style="max-width: 100%; max-height: 100%;">
+                                    <source src="{{ latest_file_path }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                  </video>
+                                {% else %}
+                                  <p>Unsupported file format</p>
+                                {% endif %}
+                              {% endif %}
+                            </figure>
+                          </div>
+                              <div class="link_btn" style="justify-content:
+                              center; margin-bottom: 10px; margin-top: 10px;">
+                                <form action="{{ url_for('predict_img') }}" method="post" enctype="multipart/form-data">
+                                  <label class="btn btn-primary btn-lg mr-4">
+                                    Upload
+                                    <input type="file" name="file" accept="image/*, video/*" style="display: none;" onchange="updateFileName(this)">
+                                  </label>   
+                                  <label id="fileNameLabel" style="display: none; color: black;"></label>
+                                  <label class="btn btn-primary btn-lg mr-4" style="background-color: #ff4800;">
+                                    <button style="background-color: #ff4800; color: white;" type="submit">Detect</button>
+                                  </label>                           
+                                </form>
+                                
+                                <script>
+                                  function updateFileName(input) {
+                                    var fileNameLabel = document.getElementById("fileNameLabel");
+                                    if (input.files.length > 0) {
+                                      fileNameLabel.textContent = input.files[0].name;
+                                      fileNameLabel.style.display = "inline-block"; // Show the label
+                                    } else {
+                                      fileNameLabel.textContent = ""; // Clear the label text
+                                      fileNameLabel.style.display = "none"; // Hide the label
+                                    }
+                                  }
+                                </script>
+                                
+
+                              {% if latest_file_path %}
+                              <a  href="{{ latest_file_path }}"  download>
+                                <label>
+                                  <button class="btn btn-primary btn-lg mr-4">Download the result</button>
+                                </label> 
+                              </a>
+                              {% endif %} 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+  </body>
+  <div class="footer"></div>
+</html>
