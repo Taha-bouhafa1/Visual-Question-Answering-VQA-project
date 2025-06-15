@@ -1,0 +1,8 @@
+torch==1.13.1
+torchvision==0.14.1
+Pillow==9.3.0
+transformers==4.35.2
+matplotlib==3.7.1
+seaborn==0.12.2
+tqdm==4.66.1
+numpy
