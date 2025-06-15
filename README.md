@@ -2,11 +2,15 @@
 
 This project implements a Visual Question Answering (VQA) system using the VQA v2.0 dataset. The system is designed to answer natural language questions related to images. The project is built with two main components: a **visual model** (ResNet50) for image feature extraction and a **text model** (BERT) for understanding and processing questions. These models are combined in the VQA model to predict answers.
 
-## General Purpose
+---
+
+## 🎯 General Purpose
 
 The goal is to create a model that can answer questions about images by combining visual and textual information. The project uses a combination of computer vision and natural language processing to achieve this.
 
 ![VQA Demo Image](https://github.com/Taha-bouhafa1/Visual-Question-Answering-VQA-project/blob/main/vqa-image.png)
+
+---
 
 ## 🧠 Architecture Overview
 
@@ -14,7 +18,9 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 
 ![VQA Architecture](https://github.com/Taha-bouhafa1/Visual-Question-Answering-VQA-project/blob/main/vqa%20architecture.png)
 
-## Tools and Technologies Used
+---
+
+## 🛠 Tools and Technologies Used
 
 - **VQA v2.0 Dataset**: The dataset includes images, questions, and answers. Only the training subset was used due to hardware limitations.
 - **ResNet50**: A convolutional neural network used to extract image features.
@@ -23,12 +29,14 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 - **Matplotlib**: For visualizing results.
 - **Kaggle**: The models were trained on Kaggle using two T4 GPUs.
 
-## Project Workflow
+---
+
+## 🔁 Project Workflow
 
 1. **Dataset Preprocessing**: 
    - Only the training data subset was used, with 20% for training, 5% for validation, and 5% for testing.
    - A vocabulary of the top 1000 most frequent answers was created.
-   - Questions were tokenized using BERT tokenizer.
+   - Questions were tokenized using the BERT tokenizer.
 
 2. **Model Components**:
    - **ResNet50** was trained to extract image features.
@@ -38,20 +46,24 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 
 4. **Training and Evaluation**: The models were trained using the PyTorch framework, with evaluation conducted on a held-out test set.
 
-## Evaluation Metrics
+---
+
+## 📊 Evaluation Metrics
 
 - **Test Accuracy**:
   - **ViLBERT**: 71.79%
   - **VisualBERT**: 70.80%
   - **Our Model**: 43.46%
 
-While our model's test accuracy is lower compared to state-of-the-art models like ViLBERT and VisualBERT, the performance is limited by several factors:
+Our model's test accuracy is lower than state-of-the-art models like ViLBERT and VisualBERT due to:
 
-- **Hardware limitations**: Training was performed on Kaggle using two T4 GPUs.
-- **Dataset size**: Only a subset of the training data (20%) was used.
-- **Reduced training time**: Limited epochs due to computational constraints.
+- 🧠 Limited hardware resources (Kaggle T4 GPUs)
+- ⏳ Smaller dataset used (only 20% of training data)
+- 🔄 Reduced training epochs
 
-Despite these challenges, the model provides a solid foundation and can be further improved with better hardware, additional training data, and more training time.
+Despite these constraints, the model lays a strong foundation for further improvement.
+
+---
 
 ## 📁 Repository Contents
 
@@ -77,6 +89,8 @@ Despite these challenges, the model provides a solid foundation and can be furth
 - **Reports**: Detailed project report (PDF).
 - **Presentations**: Slides explaining the project approach and results (PDF).
 
+---
+
 ## 🚀 How to Run the Project
 
 ```bash
@@ -95,3 +109,22 @@ pip install -r requirements.txt
 
 # Run the notebooks
 jupyter notebook
+```
+## 📚 Project Credits
+
+**👨‍💻 Authors**  
+- Taha Bouhafa  
+- Loubaba Lhlaibi Lmalki  
+
+**🧑‍🏫 Supervisor**  
+- Prof. Belcaid Anass  
+
+**🏫 Institution**  
+- University Abdelmalek Essaadi  
+  National School of Applied Sciences of Tétouan  
+
+**📄 License**  
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for more information.
+
+
