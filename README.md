@@ -22,7 +22,7 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 
 ## 🛠 Tools and Technologies Used
 
-- **VQA v2.0 Dataset**: The dataset includes images, questions, and answers. Only the training subset was used due to hardware limitations.
+- **VQA v2.0 Dataset** ([Download VQA v2.0 Dataset Here](https://visualqa.org/download.html)) : The dataset includes images, questions, and answers. Only the training subset was used due to hardware limitations.
 - **ResNet50**: A convolutional neural network used to extract image features.
 - **BERT**: A transformer model (`bert-base-uncased`) used to process and extract features from textual questions.
 - **PyTorch**: The deep learning framework used to train and deploy the models.
