@@ -16,7 +16,7 @@ The goal is to create a model that can answer questions about images by combinin
 
 Below is the high-level architecture of the Visual Question Answering system, showing the flow of image and question processing:
 
-![VQA Architecture](https://github.com/Taha-bouhafa1/Visual-Question-Answering-VQA-project/blob/main/vqa%20architecture.png)
+![VQA Architecture](https://github.com/Taha-bouhafa1/Visual-Question-Answering-VQA-project/blob/main/Untitled-2025-07-02-1906.png)
 
 ---
 
