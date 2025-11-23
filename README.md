@@ -110,21 +110,21 @@ pip install -r requirements.txt
 # Run the notebooks
 jupyter notebook
 ```
-## 📚 Project Credits
+##  Citation
+```bash
+@misc{bouhafa2025vqa,
+  author       = {Taha Bouhafa and Loubaba Lhlaibi Lmalki},
+  title        = {Visual Question Answering using ResNet50 and BERT: A Multimodal Deep Learning Approach},
+  year         = {2025},
+  institution  = {University Abdelmalek Essaadi, National School of Applied Sciences of Tétouan},
+  supervisor   = {Prof. Belcaid Anass},
+  howpublished = {\url{https://github.com/Taha-bouhafa1/Visual-Question-Answering-VQA-project}},
+  note         = {Deep Learning Project}
+}
+```
+## License
 
-**👨‍💻 Authors**  
-- Taha Bouhafa  
-- Loubaba Lhlaibi Lmalki  
-
-**🧑‍🏫 Supervisor**  
-- Prof. Belcaid Anass  
-
-**🏫 Institution**  
-- University Abdelmalek Essaadi  
-  National School of Applied Sciences of Tétouan  
-
-**📄 License**  
-This project is licensed under the MIT License.  
-See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the **MIT License**.  
+See the **[LICENSE](LICENSE)** file for more information.
 
 
