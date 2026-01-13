@@ -4,7 +4,7 @@ This project implements a Visual Question Answering (VQA) system using the VQA v
 
 ---
 
-## 🎯 General Purpose
+##  General Purpose
 
 The goal is to create a model that can answer questions about images by combining visual and textual information. The project uses a combination of computer vision and natural language processing to achieve this.
 
@@ -12,7 +12,7 @@ The goal is to create a model that can answer questions about images by combinin
 
 ---
 
-## 🧠 Architecture Overview
+## Architecture Overview
 
 Below is the high-level architecture of the Visual Question Answering system, showing the flow of image and question processing:
 
@@ -20,7 +20,7 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 
 ---
 
-## 🛠 Tools and Technologies Used
+## Tools and Technologies Used
 
 - **VQA v2.0 Dataset** ([Download VQA v2.0 Dataset Here](https://visualqa.org/download.html)) : The dataset includes images, questions, and answers. Only the training subset was used due to hardware limitations.
 - **ResNet50**: A convolutional neural network used to extract image features.
@@ -31,7 +31,7 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 
 ---
 
-## 🔁 Project Workflow
+##  Project Workflow
 
 1. **Dataset Preprocessing**: 
    - Only the training data subset was used, with 20% for training, 5% for validation, and 5% for testing.
@@ -48,7 +48,7 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 
 ---
 
-## 📊 Evaluation Metrics
+##  Evaluation Metrics
 
 - **Test Accuracy**:
   - **ViLBERT**: 71.79%
@@ -57,15 +57,15 @@ Below is the high-level architecture of the Visual Question Answering system, sh
 
 Our model's test accuracy is lower than state-of-the-art models like ViLBERT and VisualBERT due to:
 
-- 🧠 Limited hardware resources (Kaggle T4 GPUs)
-- ⏳ Smaller dataset used (only 20% of training data)
-- 🔄 Reduced training epochs
+-  Limited hardware resources (Kaggle T4 GPUs)
+-  Smaller dataset used (only 20% of training data)
+-  Reduced training epochs
 
 Despite these constraints, the model lays a strong foundation for further improvement.
 
 ---
 
-## 📁 Repository Contents
+##  Repository Contents
 
 - **Notebooks**:
   - `bert_training.ipynb`: BERT training notebook.
@@ -91,7 +91,7 @@ Despite these constraints, the model lays a strong foundation for further improv
 
 ---
 
-## 🚀 How to Run the Project
+##  How to Run the Project
 
 ```bash
 # Clone the repository
